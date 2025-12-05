@@ -1,4 +1,6 @@
 The-Semantic-Web-Stack-Deterministic-First-Hop-DFH-Public-Ground-For-AI/
+
+Here is the real semantic layer
 │
 ├── README.md
 ├── LICENSE
