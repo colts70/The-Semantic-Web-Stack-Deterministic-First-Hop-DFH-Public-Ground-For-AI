@@ -31,11 +31,7 @@ The-Semantic-Web-Stack-Deterministic-First-Hop-DFH-Public-Ground-For-AI/
 └── diagrams/
     ├── architecture.mmd
     └── overview.txt
-🧠 README.md
-(Clean, clear, believable version — all details preserved)
 
-markdown
-Copy code
 # The Semantic Stack & Deterministic First-Hop (DFH)
 _A simple, decentralized semantic layer for the public web + the strongest SEO primitive ever created._
 
@@ -331,6 +327,91 @@ echo "DFH installed at .well-known/stack"
 🌊 /examples/water/.well-known/stack
 json
 Copy code
+{
+  "@context": "https://schema.org",
+  "dfhVersion": "1.0",
+  "root": "https://watersitemap.com",
+  "anchors": {
+    "type": "https://watertype.com",
+    "entity": "https://waterentity.com",
+    "url": "https://waterurl.com",
+    "sitemap": "https://watersitemap.com/sitemap.xml",
+    "canonical": "https://watercanonical.com"
+  }
+}
+/tools/dfh-validator.js
+#!/usr/bin/env node
+
+/**
+ * DFH Validator
+ * Checks for structural validity of a /.well-known/stack file.
+ */
+
+const fetch = require("node-fetch");
+
+async function validate(url) {
+  if (!url) {
+    console.error("Usage: dfh-validator <domain>");
+    process.exit(1);
+  }
+
+  const target = `${url.replace(/\/$/, "")}/.well-known/stack`;
+  console.log(`🔎 Checking DFH file at: ${target}\n`);
+
+  try {
+    const res = await fetch(target, { headers: { "Accept": "application/json" } });
+    if (!res.ok) throw new Error(`HTTP ${res.status}: File not found`);
+
+    const json = await res.json();
+    console.log("✔ Valid JSON");
+
+    const anchors = json.anchors || {};
+    const required = ["type", "entity", "url", "sitemap", "canonical"];
+
+    console.log("DFH Version:", json.dfhVersion || "⚠ Missing");
+    console.log("Root:", json.root || "⚠ Missing");
+
+    console.log("\nAnchors:");
+    required.forEach(a => {
+      if (anchors[a]) console.log(`  ✔ ${a}: ${anchors[a]}`);
+      else console.log(`  ⚠ Missing anchor: ${a}`);
+    });
+
+    console.log("\nValidation complete.");
+  } catch (err) {
+    console.error("❌ Error:", err.message);
+  }
+}
+
+validate(process.argv[2]);
+
+📁 /tools/install-dfh.sh
+#!/bin/bash
+# DFH Installer Script
+# Creates a baseline /.well-known/stack file
+
+set -e
+
+mkdir -p .well-known
+
+cat <<EOF > .well-known/stack
+{
+  "@context": "https://schema.org",
+  "dfhVersion": "1.0",
+  "root": "https://example.com",
+  "anchors": {
+    "type": "https://type.com",
+    "entity": "https://entity.com",
+    "url": "https://url.com",
+    "sitemap": "https://sitemap.com/sitemap.xml",
+    "canonical": "https://canonical.com"
+  }
+}
+EOF
+
+echo "✔ DFH installed at .well-known/stack"
+
+📁 /examples/water/.well-known/stack
 {
   "@context": "https://schema.org",
   "dfhVersion": "1.0",
