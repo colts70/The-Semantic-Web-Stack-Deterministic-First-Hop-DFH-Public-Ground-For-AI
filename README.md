@@ -33,6 +33,8 @@ The-Semantic-Web-Stack-Deterministic-First-Hop-DFH-Public-Ground-For-AI/
     └── overview.txt
 
 # The Semantic Stack & Deterministic First-Hop (DFH)
+
+This is the modern implementation of Berners-Lee’s original Semantic Web map.”
 _A simple, decentralized semantic layer for the public web + the strongest SEO primitive ever created._
 
 **Status:** Public Concept  
