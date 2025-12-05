@@ -39,6 +39,8 @@ Here is the real semantic layer
 This is the modern implementation of Berners-Lee’s original Semantic Web map.”
 _A simple, decentralized semantic layer for the public web + the strongest SEO primitive ever created._
 
+Here is the real semantic layer
+
 **Status:** Public Concept  
 **Version:** Draft v1.0  
 **Date:** 2025-11-23  
