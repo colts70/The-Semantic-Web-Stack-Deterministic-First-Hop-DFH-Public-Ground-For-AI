@@ -3,6 +3,8 @@
 
 > “This is the modern implementation of Berners-Lee’s original Semantic Web map.”
 
+*DFH matches the LLM’s internal canonicalization process.
+
 A simple, decentralized semantic layer for the public web + the strongest SEO primitive ever created.
 
 **Status:** Public Concept  
