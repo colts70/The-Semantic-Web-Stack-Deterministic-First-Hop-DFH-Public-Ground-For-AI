@@ -244,7 +244,7 @@ DFH spreads exactly like DNS:
 one domain at a time.
 
 11. License
-MIT License — fully open, decentralized, and public.
+cco License — fully open, decentralized, and public.
 
 Directory Structure
 mathematica
