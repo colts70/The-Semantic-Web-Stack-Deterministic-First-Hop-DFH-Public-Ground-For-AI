@@ -11,7 +11,7 @@ A simple, decentralized semantic layer for the public web + the strongest SEO pr
 **Version:** Draft v1.0  
 **Date:** 2025-11-23  
 **DFH Ready Spec Version:** 1.0  
-**License:** MIT
+**License:** cco
 
 ---
 
